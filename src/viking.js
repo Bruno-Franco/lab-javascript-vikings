@@ -64,7 +64,7 @@ class War {
 	vikingAttack() {
 		let indexSax = Math.floor(Math.random() * this.saxonArmy.length)
 		let indexVik = Math.floor(Math.random() * this.vikingArmy.length)
-		this.saxonArmy[indexSax].receiveDamage(
+		let result = this.saxonArmy[indexSax].receiveDamage(
 			this.vikingArmy[indexVik].strength
 		)
 
@@ -73,11 +73,12 @@ class War {
 				this.saxonArmy.indexOf(this.saxonArmy[indexSax], 1)
 			)
 		}
+		return result
 	}
 	saxonAttack() {
 		let indexSax = Math.floor(Math.random() * this.saxonArmy.length)
 		let indexVik = Math.floor(Math.random() * this.vikingArmy.length)
-		this.vikingArmy[indexVik].receiveDamage(
+		let result = this.vikingArmy[indexVik].receiveDamage(
 			this.saxonArmy[indexSax].strength
 		)
 
@@ -86,6 +87,7 @@ class War {
 				this.vikingArmy.indexOf(this.vikingArmy[indexSax], 1)
 			)
 		}
+		return result
 	}
 	showStatus() {
 		if (this.vikingArmy.length === 0) {
